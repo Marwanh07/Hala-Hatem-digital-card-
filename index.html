@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Digital business card for Hala Hatem, Sales at Real Estate Pioneers | Eladly Group."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Hala Hatem | Digital Business Card</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #86c5ff;
+        --blue-deep: #397fbd;
+        --gold: #f8e6a0;
+        --ink: #263445;
+        --muted: #788493;
+        --line: rgba(91, 128, 160, 0.15);
+        --glass: rgba(255, 255, 255, 0.77);
+        --shadow: 0 18px 50px rgba(57, 91, 119, 0.08);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: #fff;
+        overflow-x: clip;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse at 50% 1%, rgba(134, 197, 255, 0.12), transparent 31rem),
+          radial-gradient(ellipse at 100% 42%, rgba(248, 230, 160, 0.11), transparent 23rem),
+          #fff;
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .page-shell {
+        position: relative;
+        width: min(100% - 40px, 480px);
+        margin: 0 auto;
+        padding: 48px 0 36px;
+      }
+
+      .hero-backdrop {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 50%;
+        width: min(calc(100vw - 20px), 700px);
+        height: 390px;
+        overflow: hidden;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      .hero-backdrop svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .hero-backdrop .gold-line {
+        stroke: #f8e6a0;
+        filter: drop-shadow(0 0 2px rgba(248, 230, 160, 0.72));
+      }
+
+      .hero-backdrop .blue-line {
+        stroke: rgba(134, 197, 255, 0.42);
+      }
+
+      .hero-backdrop .gold-fill {
+        fill: rgba(248, 230, 160, 0.76);
+      }
+
+      .hero-backdrop .float {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: drift 12s ease-in-out infinite;
+      }
+
+      .hero-backdrop .float-slow {
+        animation-duration: 17s;
+        animation-delay: -6s;
+      }
+
+      .hero-backdrop .float-fast {
+        animation-duration: 10s;
+        animation-delay: -3s;
+      }
+
+      .hero-backdrop .rise {
+        animation: rise 15s ease-in-out infinite;
+      }
+
+      @keyframes drift {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(0, -9px, 0); }
+      }
+
+      @keyframes rise {
+        0%, 100% { transform: translate3d(0, 4px, 0); opacity: 0.48; }
+        50% { transform: translate3d(5px, -12px, 0); opacity: 0.8; }
+      }
+
+      .identity {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 76px;
+        height: 76px;
+        place-items: center;
+        margin-bottom: 19px;
+        border: 1px solid rgba(134, 197, 255, 0.49);
+        border-radius: 23px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(232, 245, 255, 0.78));
+        box-shadow: 0 10px 28px rgba(91, 151, 196, 0.14), inset 0 0 0 4px rgba(255, 255, 255, 0.82);
+      }
+
+      .brand-mark svg {
+        width: 51px;
+        height: 51px;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      .identity h1 {
+        font-size: clamp(36px, 9vw, 44px);
+        font-weight: 750;
+        letter-spacing: -0.055em;
+        line-height: 1.12;
+      }
+
+      .position {
+        margin-top: 7px;
+        color: #b19a4e;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+
+      .company {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.015em;
+      }
+
+      .ornament {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: 94px;
+        margin: 28px auto 30px;
+        color: #d6bd62;
+      }
+
+      .ornament::before,
+      .ornament::after {
+        height: 1px;
+        flex: 1;
+        background: linear-gradient(90deg, transparent, rgba(214, 189, 98, 0.65));
+        content: "";
+      }
+
+      .ornament::after {
+        transform: rotate(180deg);
+      }
+
+      .ornament span {
+        width: 5px;
+        height: 5px;
+        border: 1px solid currentColor;
+        transform: rotate(45deg);
+      }
+
+      .section {
+        position: relative;
+        z-index: 1;
+        margin-top: 29px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin: 0 0 13px 3px;
+      }
+
+      .section-heading h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 21px;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+      }
+
+      .section-heading::after {
+        height: 1px;
+        flex: 1;
+        background: linear-gradient(90deg, var(--line), transparent);
+        content: "";
+      }
+
+      .glass-card {
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        background: var(--glass);
+        box-shadow: var(--shadow), inset 0 0 0 1px rgba(115, 160, 195, 0.07);
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+      }
+
+      .service-card {
+        display: flex;
+        min-height: 116px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.96);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 10px 28px rgba(57, 91, 119, 0.065), inset 0 0 0 1px rgba(115, 160, 195, 0.06);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .service-card:hover,
+      .service-card:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(134, 197, 255, 0.62);
+        box-shadow: 0 14px 32px rgba(57, 91, 119, 0.11);
+      }
+
+      .service-card:active {
+        transform: translateY(0) scale(0.99);
+      }
+
+      .service-name {
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+      }
+
+      .services-icon,
+      .contact-icon {
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        color: var(--blue-deep);
+        background: rgba(134, 197, 255, 0.16);
+      }
+
+      .services-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+      }
+
+      .service-card:nth-child(even) .services-icon {
+        color: #a68d3e;
+        background: rgba(248, 230, 160, 0.28);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .contact-row {
+        display: flex;
+        width: 100%;
+        min-height: 72px;
+        align-items: center;
+        gap: 14px;
+        padding: 13px 17px;
+        border: 1px solid rgba(255, 255, 255, 0.96);
+        border-radius: 18px;
+        color: inherit;
+        background: var(--glass);
+        box-shadow: 0 9px 28px rgba(57, 91, 119, 0.065), inset 0 0 0 1px rgba(115, 160, 195, 0.06);
+        text-align: left;
+        text-decoration: none;
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .contact-row:hover,
+      .contact-row:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(134, 197, 255, 0.62);
+        box-shadow: 0 13px 30px rgba(57, 91, 119, 0.1);
+      }
+
+      .contact-row:active {
+        transform: translateY(0) scale(0.99);
+      }
+
+      .contact-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 15px;
+      }
+
+      .contact-icon.facebook {
+        color: #4c80b9;
+        background: rgba(134, 197, 255, 0.16);
+      }
+
+      .contact-copy {
+        display: grid;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .contact-label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .contact-detail {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .row-arrow {
+        width: 17px;
+        height: 17px;
+        margin-left: auto;
+        color: #9aa8b5;
+      }
+
+      .share-button {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        width: 100%;
+        min-height: 54px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 22px;
+        border: 1px solid rgba(74, 144, 202, 0.16);
+        border-radius: 17px;
+        color: #fff;
+        background: linear-gradient(110deg, #79baff, #89c9ff);
+        box-shadow: 0 12px 25px rgba(91, 165, 221, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.48);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .share-button:hover,
+      .share-button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 29px rgba(91, 165, 221, 0.29);
+      }
+
+      .share-button:active {
+        transform: scale(0.99);
+      }
+
+      .share-button:focus-visible,
+      .service-card:focus-visible,
+      .contact-row:focus-visible,
+      .modal-close:focus-visible,
+      .action-button:focus-visible {
+        outline: 3px solid rgba(57, 127, 189, 0.4);
+        outline-offset: 3px;
+      }
+
+      .footer-note {
+        position: relative;
+        z-index: 1;
+        margin-top: 25px;
+        color: #9aa5af;
+        font-size: 11px;
+        letter-spacing: 0.055em;
+        text-align: center;
+      }
+
+      body.service-modal-open {
+        overflow: hidden;
+      }
+
+      .contact-dialog,
+      .service-dialog {
+        width: min(100% - 36px, 360px);
+        max-width: 360px;
+        padding: 0;
+        overflow: visible;
+        border: 0;
+        border-radius: 25px;
+        color: var(--ink);
+        background: transparent;
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+        transition: opacity 220ms ease, transform 220ms ease, overlay 220ms allow-discrete, display 220ms allow-discrete;
+      }
+
+      .service-dialog {
+        width: min(100% - 32px, 520px);
+        max-width: 520px;
+        max-height: calc(100vh - 32px);
+        max-height: calc(100dvh - 32px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+      }
+
+      .contact-dialog[open],
+      .service-dialog[open] {
+        display: block;
+      }
+
+      .contact-dialog::backdrop,
+      .service-dialog::backdrop {
+        background: rgba(38, 52, 69, 0);
+        -webkit-backdrop-filter: blur(0);
+        backdrop-filter: blur(0);
+        transition: background 220ms ease, backdrop-filter 220ms ease;
+      }
+
+      .contact-dialog[open].is-visible,
+      .service-dialog[open].is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .contact-dialog[open].is-visible::backdrop,
+      .service-dialog[open].is-visible::backdrop {
+        background: rgba(38, 52, 69, 0.24);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+      }
+
+      .modal-panel {
+        position: relative;
+        padding: 30px 23px 23px;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 24px 75px rgba(33, 53, 73, 0.2), inset 0 0 0 1px rgba(115, 160, 195, 0.06);
+        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(24px);
+      }
+
+      .service-dialog .modal-panel {
+        padding: 30px clamp(20px, 5vw, 34px) 25px;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 1px solid rgba(91, 128, 160, 0.12);
+        border-radius: 50%;
+        color: #718091;
+        background: rgba(247, 250, 252, 0.85);
+        cursor: pointer;
+      }
+
+      .modal-emblem {
+        display: grid;
+        width: 51px;
+        height: 51px;
+        place-items: center;
+        margin: 0 auto 15px;
+        border: 1px solid rgba(134, 197, 255, 0.37);
+        border-radius: 17px;
+        color: var(--blue-deep);
+        background: linear-gradient(145deg, #f8fcff, #eaf5ff);
+      }
+
+      .modal-panel h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 25px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      .service-eyebrow {
+        margin-bottom: 8px;
+        color: #a68d3e;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .service-headline {
+        margin: 14px auto 0;
+        max-width: 410px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(22px, 5vw, 29px);
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.18;
+        text-align: center;
+      }
+
+      .modal-description {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .service-description {
+        max-width: 430px;
+        margin: 11px auto 0;
+        font-size: 13px;
+        line-height: 1.65;
+        text-align: center;
+      }
+
+      .service-details {
+        margin-top: 23px;
+      }
+
+      .service-details h3,
+      .service-help h3 {
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .service-benefits {
+        display: grid;
+        gap: 10px;
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .service-benefits li {
+        position: relative;
+        padding-left: 22px;
+        color: #526170;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .service-benefits li::before {
+        position: absolute;
+        top: 0.35em;
+        left: 2px;
+        width: 9px;
+        height: 9px;
+        border: 2px solid #d5bd68;
+        border-radius: 50%;
+        content: "";
+      }
+
+      .service-help {
+        margin-top: 20px;
+        padding: 15px 16px;
+        border: 1px solid rgba(134, 197, 255, 0.2);
+        border-radius: 16px;
+        background: linear-gradient(120deg, rgba(232, 245, 255, 0.7), rgba(255, 255, 255, 0.74));
+      }
+
+      .service-help p {
+        margin-top: 6px;
+        color: #647383;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .modal-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .service-dialog .modal-actions {
+        margin-top: 20px;
+      }
+
+      .action-button {
+        display: flex;
+        min-height: 55px;
+        align-items: center;
+        gap: 12px;
+        padding: 0 15px;
+        border: 1px solid rgba(112, 160, 194, 0.14);
+        border-radius: 15px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.82);
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+      }
+
+      .action-button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(134, 197, 255, 0.65);
+        background: #f6fbff;
+      }
+
+      .action-button.whatsapp .action-icon {
+        color: #2b9c68;
+        background: rgba(73, 190, 132, 0.12);
+      }
+
+      .service-cta {
+        justify-content: center;
+        min-height: 62px;
+        border-color: rgba(74, 144, 202, 0.16);
+        color: #fff;
+        background: linear-gradient(110deg, #79baff, #89c9ff);
+        box-shadow: 0 10px 22px rgba(91, 165, 221, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.48);
+      }
+
+      .service-cta:hover,
+      .service-cta:focus-visible {
+        border-color: rgba(74, 144, 202, 0.3);
+        color: #fff;
+        background: linear-gradient(110deg, #69adf5, #80c1fa);
+      }
+
+      .service-cta .action-icon {
+        color: #20855a;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .service-cta-copy {
+        display: grid;
+        gap: 3px;
+      }
+
+      .service-cta-title {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .service-cta-note {
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      .action-button.call .action-icon {
+        color: var(--blue-deep);
+        background: rgba(134, 197, 255, 0.17);
+      }
+
+      .action-icon {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border-radius: 12px;
+      }
+
+      .action-label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .toast {
+        position: fixed;
+        z-index: 3;
+        right: 20px;
+        bottom: max(20px, env(safe-area-inset-bottom));
+        left: 20px;
+        width: fit-content;
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 12px 17px;
+        border: 1px solid rgba(255, 255, 255, 0.82);
+        border-radius: 14px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 12px 32px rgba(38, 52, 69, 0.15);
+        font-size: 13px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 180ms ease, transform 180ms ease;
+        pointer-events: none;
+      }
+
+      .toast.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (min-width: 700px) {
+        .page-shell {
+          padding-top: 62px;
+          padding-bottom: 48px;
+        }
+
+        .section {
+          margin-top: 34px;
+        }
+
+        .ornament {
+          margin-top: 31px;
+          margin-bottom: 34px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .hero-backdrop .float,
+        .hero-backdrop .rise {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="hero-backdrop" aria-hidden="true">
+        <svg viewBox="0 0 700 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="float-slow gold-line" opacity=".8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M75 241v-36h22v36M80 214h5m5 0h3m-8 9h5m5 0h3m-13 9h5m5 0h3M71 241h31" />
+            <path d="m71 185 13-13 9 8 18-21m-1 0h-9m9 0v9" />
+            <path d="M68 158h6m-3-3v6" />
+          </g>
+          <g class="float blue-line" opacity=".75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M604 233v-57h29v57M610 184h5m7 0h5m-17 10h5m7 0h5m-17 10h5m7 0h5m-17 10h5m7 0h5M598 233h41" />
+            <path d="m579 164 14-14 10 8 20-23m0 0h-10m10 0v10" />
+            <circle cx="640" cy="157" r="2" fill="rgba(134,197,255,.55)" stroke="none" />
+          </g>
+          <g class="float-fast gold-line" opacity=".7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M153 284c0-7 5-12 11-12s11 5 11 12c0 8-11 20-11 20s-11-12-11-20Z" />
+            <circle cx="164" cy="284" r="3.5" />
+            <path d="m202 258 9-9 7 6 13-15m0 0h-7m7 0v7" />
+          </g>
+          <g class="float-slow blue-line" opacity=".7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M536 283c0-7 5-12 11-12s11 5 11 12c0 8-11 20-11 20s-11-12-11-20Z" />
+            <circle cx="547" cy="283" r="3.5" />
+            <path d="M580 299h5m-2.5-2.5v5" />
+          </g>
+          <g class="rise gold-line" opacity=".65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M269 282h16m-16 7h25" />
+            <path d="m286 270 9-9 7 6 11-13m0 0h-7m7 0v7" />
+          </g>
+          <g class="float-fast blue-line" opacity=".6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M427 214h15m-15 7h23" />
+            <path d="m432 198 9-9 7 6 12-14m0 0h-7m7 0v7" />
+          </g>
+          <g class="float gold-line" opacity=".52" stroke-width="1">
+            <path d="M108 258c35 28 54 37 92 43m327-24c-25 16-42 23-68 29" stroke-dasharray="2 7" />
+            <circle cx="110" cy="258" r="2.5" class="gold-fill" stroke="none" />
+            <circle cx="200" cy="301" r="2.5" class="gold-fill" stroke="none" />
+            <circle cx="465" cy="306" r="2.5" class="gold-fill" stroke="none" />
+            <circle cx="527" cy="277" r="2.5" class="gold-fill" stroke="none" />
+          </g>
+        </svg>
+      </div>
+      <header class="identity" aria-labelledby="name">
+        <div class="brand-mark" role="img" aria-label="Geometric building and growth arrow logo">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 39V22h11v17m0 0V28h11v11m-22 0h31" stroke="#397FBD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="m10 19 10-10 7 6L39 4m0 0h-9m9 0v9" stroke="#B19A4E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11 27h3m-3 6h3m8 0h3" stroke="#86C5FF" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <h1 id="name">Hala Hatem</h1>
+        <p class="position">Sales</p>
+        <p class="company">Real Estate Pioneers | Eladly Group</p>
+      </header>
+
+      <div class="ornament" aria-hidden="true"><span></span></div>
+
+      <section class="section" aria-labelledby="services-title">
+        <div class="section-heading">
+          <h2 id="services-title">Services</h2>
+        </div>
+        <div class="services-grid">
+          <button class="service-card" type="button" data-service="sales" aria-haspopup="dialog" aria-controls="service-dialog">
+            <span class="services-icon" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V9h6v10m0 0V5h7v14m0 0h3M2.5 19h19M6 12h2m5-4h2m-2 4h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="m4 6 3-3 2 2 4-4m0 0h-3m3 0v3" stroke="#B19A4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="service-name">Property Sales</span>
+          </button>
+          <button class="service-card" type="button" data-service="residential" aria-haspopup="dialog" aria-controls="service-dialog">
+            <span class="services-icon" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="M3.5 20V8l5-4v16m0 0V11l5-4v13m0 0V5l4-2v17m-16 0h19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.5 11h1m-1 3h1m4-1h1m-1 3h1m4-6h1m-1 3h1m-1 3h1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="service-name">Residential Properties</span>
+          </button>
+          <button class="service-card" type="button" data-service="consultation" aria-haspopup="dialog" aria-controls="service-dialog">
+            <span class="services-icon" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-5 4v-4.2A2.5 2.5 0 0 1 4 13.5v-8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M8 9h8m-8 3h5" stroke="#B19A4E" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="service-name">Real Estate Consultation</span>
+          </button>
+          <button class="service-card" type="button" data-service="assistance" aria-haspopup="dialog" aria-controls="service-dialog">
+            <span class="services-icon" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="m3 12 4-4 4 1 2-1 6 2c1 .4 1.5 1.5.8 2.2l-5 5.2c-.7.7-1.6.9-2.5.5L9 16H6l-3 2v-6Zm8-3 2.2 1.1c.8.4 1.7.3 2.4-.2l1-.7M7 8V5.5A1.5 1.5 0 0 1 8.5 4h7A1.5 1.5 0 0 1 17 5.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 6h4" stroke="#B19A4E" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="service-name">Property Assistance</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title">Contact</h2>
+        </div>
+        <div class="contact-list">
+          <button class="contact-row" id="phone-trigger" type="button" aria-haspopup="dialog" aria-controls="contact-dialog">
+            <span class="contact-icon" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                <path d="M7.1 3.8 9.5 3c.6-.2 1.2.1 1.4.7l1.1 3c.2.5 0 1-.4 1.3L10 9.3a14.6 14.6 0 0 0 4.7 4.7l1.3-1.6c.3-.4.8-.5 1.3-.4l3 1.1c.6.2.9.8.7 1.4l-.8 2.4c-.2.5-.7.9-1.3.9C10.8 17.8 6.2 13.2 6.2 7.1c0-.6.3-1.1.9-1.3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1 -1)" />
+              </svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">Phone</span>
+              <span class="contact-detail">01030967639</span>
+            </span>
+            <svg class="row-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <a
+            class="contact-row"
+            href="https://www.facebook.com/share/1K6nJty1rN/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Facebook Page in a new tab"
+          >
+            <span class="contact-icon facebook" aria-hidden="true">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.2v3.2H10V21h3.4Z" />
+              </svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">Facebook Page</span>
+              <span class="contact-detail">Connect on Facebook</span>
+            </span>
+            <svg class="row-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <button class="share-button" id="share-button" type="button">
+        <svg width="19" height="19" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M12 15V3m0 0L8 7m4-4 4 4M5 13v5.5c0 .8.7 1.5 1.5 1.5h11c.8 0 1.5-.7 1.5-1.5V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>Share this card</span>
+      </button>
+
+      <p class="footer-note">A LITTLE INTRODUCTION, WHEREVER YOU GO</p>
+    </main>
+
+    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <div class="modal-panel">
+        <button class="modal-close" id="close-dialog" type="button" aria-label="Close contact options">
+          <svg width="17" height="17" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+        <span class="modal-emblem" aria-hidden="true">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+            <path d="M7.1 3.8 9.5 3c.6-.2 1.2.1 1.4.7l1.1 3c.2.5 0 1-.4 1.3L10 9.3a14.6 14.6 0 0 0 4.7 4.7l1.3-1.6c.3-.4.8-.5 1.3-.4l3 1.1c.6.2.9.8.7 1.4l-.8 2.4c-.2.5-.7.9-1.3.9C10.8 17.8 6.2 13.2 6.2 7.1c0-.6.3-1.1.9-1.3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1 -1)" />
+          </svg>
+        </span>
+        <h2 id="dialog-title">Let's connect</h2>
+        <p class="modal-description" id="dialog-description">Choose how you'd like to get in touch.</p>
+        <div class="modal-actions">
+          <a class="action-button whatsapp" href="https://wa.me/201030967639" target="_blank" rel="noopener noreferrer">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4a8 8 0 1 1 14.7-4.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M9 8.5c.2-.4.4-.4.7-.4h.3c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.5l-.5.6c.5.9 1.2 1.5 2.1 2l.6-.7c.2-.2.4-.2.6-.1l1.3.6c.3.1.4.3.3.6-.1.5-.4.9-.9 1.1-.6.3-1.4.2-2.7-.4-1.6-.7-2.9-2-3.5-3.2-.6-1.2-.6-2 0-2.4l.8-.4Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="action-label">WhatsApp</span>
+          </a>
+          <a class="action-button call" href="tel:01030967639">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                <path d="M7.1 3.8 9.5 3c.6-.2 1.2.1 1.4.7l1.1 3c.2.5 0 1-.4 1.3L10 9.3a14.6 14.6 0 0 0 4.7 4.7l1.3-1.6c.3-.4.8-.5 1.3-.4l3 1.1c.6.2.9.8.7 1.4l-.8 2.4c-.2.5-.7.9-1.3.9C10.8 17.8 6.2 13.2 6.2 7.1c0-.6.3-1.1.9-1.3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1 -1)" />
+              </svg>
+            </span>
+            <span class="action-label">Call 01030967639</span>
+          </a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="service-dialog" id="service-dialog" aria-labelledby="service-title" aria-describedby="service-description">
+      <div class="modal-panel">
+        <button class="modal-close" id="close-service-dialog" type="button" aria-label="Close service details">
+          <svg width="17" height="17" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+        <span class="modal-emblem" id="service-emblem" aria-hidden="true"></span>
+        <p class="service-eyebrow">Real estate services</p>
+        <h2 id="service-title"></h2>
+        <h3 class="service-headline" id="service-headline"></h3>
+        <p class="service-description" id="service-description"></p>
+        <section class="service-details" aria-labelledby="service-benefits-title">
+          <h3 id="service-benefits-title">What you can explore</h3>
+          <ul class="service-benefits" id="service-benefits"></ul>
+        </section>
+        <section class="service-help" aria-labelledby="service-help-title">
+          <h3 id="service-help-title">How Hala can help</h3>
+          <p id="service-help"></p>
+        </section>
+        <div class="modal-actions">
+          <a class="action-button service-cta" id="service-whatsapp" href="https://wa.me/201030967639" target="_blank" rel="noopener noreferrer">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4a8 8 0 1 1 14.7-4.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M9 8.5c.2-.4.4-.4.7-.4h.3c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.5l-.5.6c.5.9 1.2 1.5 2.1 2l.6-.7c.2-.2.4-.2.6-.1l1.3.6c.3.1.4.3.3.6-.1.5-.4.9-.9 1.1-.6.3-1.4.2-2.7-.4-1.6-.7-2.9-2-3.5-3.2-.6-1.2-.6-2 0-2.4l.8-.4Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="service-cta-copy">
+              <span class="service-cta-title" id="service-cta-title"></span>
+              <span class="service-cta-note">Contact on WhatsApp</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+      const dialog = document.getElementById("contact-dialog");
+      const phoneTrigger = document.getElementById("phone-trigger");
+      const closeDialog = document.getElementById("close-dialog");
+      const serviceDialog = document.getElementById("service-dialog");
+      const closeServiceDialogButton = document.getElementById("close-service-dialog");
+      const serviceTitle = document.getElementById("service-title");
+      const serviceHeadline = document.getElementById("service-headline");
+      const serviceDescription = document.getElementById("service-description");
+      const serviceBenefits = document.getElementById("service-benefits");
+      const serviceHelp = document.getElementById("service-help");
+      const serviceEmblem = document.getElementById("service-emblem");
+      const serviceCta = document.getElementById("service-whatsapp");
+      const serviceCtaTitle = document.getElementById("service-cta-title");
+      const shareButton = document.getElementById("share-button");
+      const toast = document.getElementById("toast");
+      let toastTimeout;
+      let dialogCloseTimeout;
+      let serviceDialogCloseTimeout;
+
+      const services = {
+        sales: {
+          title: "Property Sales",
+          headline: "Find Your Next Property.",
+          description: "Looking to buy a property in Egypt? Get assistance exploring available real estate opportunities and finding an option that matches your needs and budget.",
+          benefits: [
+            "Available property opportunities.",
+            "Different locations and residential areas.",
+            "Buying options and payment plans, where available.",
+            "Guidance throughout the purchasing process.",
+          ],
+          help: "Connect with Hala to discuss your requirements, explore relevant opportunities, and understand the next steps. Availability and payment options vary by property.",
+          cta: "Explore Properties",
+          message: "Hello Hala, I'm interested in exploring property sales opportunities. Could you share more information?",
+        },
+        residential: {
+          title: "Residential Properties",
+          headline: "Find a Place to Call Home.",
+          description: "Explore residential property opportunities across Egypt, whether you're looking for your first home, a family apartment, or a property that suits your lifestyle.",
+          benefits: [
+            "Apartments and residential units.",
+            "Different locations and communities.",
+            "Unit sizes and layouts.",
+            "Available delivery dates and finishing options.",
+            "Payment options, where available.",
+          ],
+          help: "Share what you are looking for with Hala and discuss residential options that may suit your needs. Unit details and options vary by property.",
+          cta: "Find Your Home",
+          message: "Hello Hala, I'm looking for a residential property in Egypt. I'd like to know about the available options.",
+        },
+        consultation: {
+          title: "Real Estate Consultation",
+          headline: "Make Your Next Property Decision With Confidence.",
+          description: "Making a real estate decision requires understanding the location, property details, pricing, and available purchasing options. Get assistance understanding your options before making your next move.",
+          benefits: [
+            "Understanding property opportunities.",
+            "Comparing available options.",
+            "Evaluating locations and property features.",
+            "Understanding payment plans.",
+            "Guidance based on individual requirements.",
+          ],
+          help: "Talk with Hala about your requirements and ask questions about the opportunities and purchasing options you are considering.",
+          cta: "Request Consultation",
+          message: "Hello Hala, I'd like to request a real estate consultation.",
+        },
+        assistance: {
+          title: "Property Assistance",
+          headline: "Your Property Journey, Made Easier.",
+          description: "From discovering suitable properties to understanding the purchasing process, receive assistance at different stages of your real estate journey.",
+          benefits: [
+            "Finding properties matching your requirements.",
+            "Getting information about available units.",
+            "Understanding booking procedures.",
+            "Assistance with property-related inquiries.",
+            "Guidance during the purchasing journey.",
+          ],
+          help: "Reach out to Hala with your property-related inquiry to discuss relevant information and the next step in your purchasing journey.",
+          cta: "Get Assistance",
+          message: "Hello Hala, I need assistance with a real estate inquiry.",
+        },
+      };
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("visible");
+        window.clearTimeout(toastTimeout);
+        toastTimeout = window.setTimeout(() => toast.classList.remove("visible"), 2800);
+      }
+
+      function openContactDialog() {
+        window.clearTimeout(dialogCloseTimeout);
+        dialog.showModal();
+        window.requestAnimationFrame(() => dialog.classList.add("is-visible"));
+      }
+
+      function closeContactDialog() {
+        if (!dialog.open || !dialog.classList.contains("is-visible")) return;
+        dialog.classList.remove("is-visible");
+        const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 220;
+        dialogCloseTimeout = window.setTimeout(() => dialog.close(), delay);
+      }
+
+      phoneTrigger.addEventListener("click", openContactDialog);
+      closeDialog.addEventListener("click", closeContactDialog);
+      dialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeContactDialog();
+      });
+      dialog.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeContactDialog();
+        }
+      });
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) closeContactDialog();
+      });
+
+      function openServiceDialog(serviceKey, trigger) {
+        const service = services[serviceKey];
+        if (!service) return;
+
+        window.clearTimeout(serviceDialogCloseTimeout);
+        serviceTitle.textContent = service.title;
+        serviceHeadline.textContent = service.headline;
+        serviceDescription.textContent = service.description;
+        serviceHelp.textContent = service.help;
+        serviceCtaTitle.textContent = service.cta;
+        serviceCta.href = `https://wa.me/201030967639?${new URLSearchParams({ text: service.message })}`;
+        serviceEmblem.replaceChildren(trigger.querySelector(".services-icon svg").cloneNode(true));
+        serviceBenefits.replaceChildren(
+          ...service.benefits.map((benefit) => {
+            const item = document.createElement("li");
+            item.textContent = benefit;
+            return item;
+          }),
+        );
+        serviceDialog.showModal();
+        document.body.classList.add("service-modal-open");
+        window.requestAnimationFrame(() => {
+          if (serviceDialog.open) serviceDialog.classList.add("is-visible");
+        });
+      }
+
+      function closeServiceDialog() {
+        if (!serviceDialog.open) return;
+        serviceDialog.classList.remove("is-visible");
+        const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 220;
+        window.clearTimeout(serviceDialogCloseTimeout);
+        serviceDialogCloseTimeout = window.setTimeout(() => serviceDialog.close(), delay);
+      }
+
+      document.querySelectorAll(".service-card").forEach((trigger) => {
+        trigger.addEventListener("click", () => openServiceDialog(trigger.dataset.service, trigger));
+      });
+      closeServiceDialogButton.addEventListener("click", closeServiceDialog);
+      serviceDialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeServiceDialog();
+      });
+      serviceDialog.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeServiceDialog();
+        }
+      });
+      serviceDialog.addEventListener("click", (event) => {
+        if (event.target === serviceDialog) closeServiceDialog();
+      });
+      serviceDialog.addEventListener("close", () => {
+        serviceDialog.classList.remove("is-visible");
+        document.body.classList.remove("service-modal-open");
+        window.clearTimeout(serviceDialogCloseTimeout);
+      });
+
+      shareButton.addEventListener("click", async () => {
+        const shareData = {
+          title: "Hala Hatem | Digital Business Card",
+          text: "Connect with Hala Hatem, Sales at Real Estate Pioneers | Eladly Group.",
+          url: window.location.href,
+        };
+
+        if (typeof navigator.share === "function") {
+          try {
+            await navigator.share(shareData);
+          } catch (error) {
+            if (error.name !== "AbortError") showToast("Unable to share this card right now.");
+          }
+          return;
+        }
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(window.location.href);
+          } else {
+            const copyField = document.createElement("textarea");
+            copyField.value = window.location.href;
+            copyField.setAttribute("readonly", "");
+            copyField.style.position = "fixed";
+            copyField.style.opacity = "0";
+            document.body.appendChild(copyField);
+            copyField.select();
+            const copied = document.execCommand("copy");
+            copyField.remove();
+            if (!copied) throw new Error("Clipboard copy was not available.");
+          }
+          showToast("Card link copied to clipboard.");
+        } catch {
+          showToast("Could not copy the link. Please copy the page address.");
+        }
+      });
+    </script>
+  </body>
+</html>
